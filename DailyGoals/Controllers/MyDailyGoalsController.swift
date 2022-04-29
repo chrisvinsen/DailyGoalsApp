@@ -88,7 +88,9 @@ class MyDailyGoalsViewController: UIViewController {
         
         if currentTabIndex == Const.TabYesterdayGoals {
             loadData(Const.TabYesterdayGoals)
-            performSegue(withIdentifier: Const.SegueToReport, sender: self)
+            if listOfCompletedGoals.count > 0 {
+                performSegue(withIdentifier: Const.SegueToReport, sender: self)
+            }
         } else if currentTabIndex == Const.TabTodayGoals {
             loadData(Const.TabTodayGoals)
         } else if currentTabIndex == Const.TabTomorrowGoals {
