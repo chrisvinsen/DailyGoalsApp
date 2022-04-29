@@ -29,7 +29,6 @@ class ReportViewController: UIViewController {
         tableView.register(UINib(nibName: "YesterdaySummaryTwoTableViewCell", bundle: nil), forCellReuseIdentifier: "YesterdaySummaryTwoTableViewCell")
         tableView.register(UINib(nibName: "ActiveGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "ActiveGoalsTableViewCell")
         tableView.register(UINib(nibName: "SectionHeadingWithSubHeadingTableViewCell", bundle: nil), forCellReuseIdentifier: "SectionHeadingWithSubHeadingTableViewCell")
-        tableView.register(UINib(nibName: "EmptyDataTableViewCell", bundle: nil), forCellReuseIdentifier: "EmptyDataTableViewCell")
     }
     
     func loadYesterdayData() {
@@ -82,9 +81,9 @@ extension ReportViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 2
         } else if section == 1 {
-            return listOfCompletedGoals.count == 0 ? 1 : listOfCompletedGoals.count
+            return listOfCompletedGoals.count
         } else if section == 2 {
-            return listOfActiveGoals.count == 0 ? 1 : listOfActiveGoals.count
+            return listOfActiveGoals.count
         }
         
         return 0
@@ -109,6 +108,9 @@ extension ReportViewController: UITableViewDelegate, UITableViewDataSource {
             headerCell.headingLabel.text = "Great !"
             headerCell.subHeadingLabel.text = "You have done these"
         } else if section == 2 {
+            if listOfActiveGoals.count == 0 {
+                return nil
+            }
             headerCell.headingLabel.text = "But ..."
             headerCell.subHeadingLabel.text = "You have missed these"
         }
@@ -122,7 +124,6 @@ extension ReportViewController: UITableViewDelegate, UITableViewDataSource {
         var goalsData: GoalsModel?
         
         var status: Int = -1
-        let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyDataTableViewCell") as! EmptyDataTableViewCell
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -167,14 +168,8 @@ extension ReportViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if status == Const.GoalsStatusActive {
-            if listOfActiveGoals.count == 0 {
-                return emptyCell
-            }
             goalsData = listOfActiveGoals[indexPath.row]
         } else if status == Const.GoalsStatusComplete {
-            if listOfCompletedGoals.count == 0 {
-                return emptyCell
-            }
             goalsData = listOfCompletedGoals[indexPath.row]
         }
         
