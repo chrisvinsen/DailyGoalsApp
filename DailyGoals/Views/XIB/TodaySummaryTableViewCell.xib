@@ -21,30 +21,31 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZk-0x-Bd7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PI5-tJ-c4q" customClass="CustomExtensionUIView" customModule="DailyGoals" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="152" height="145"/>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PI5-tJ-c4q">
+                                <rect key="frame" x="0.0" y="0.0" width="152.66666666666666" height="145"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time-ilustration" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-YL-iEk">
-                                        <rect key="frame" x="52" y="45" width="100" height="100"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.seal.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-YL-iEk">
+                                        <rect key="frame" x="77.666666666666671" y="69.333333333333343" width="75.000000000000014" height="76.333333333333314"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="hac-77-ueI"/>
-                                            <constraint firstAttribute="height" constant="100" id="w7g-ii-0el"/>
+                                            <constraint firstAttribute="width" constant="75" id="hac-77-ueI"/>
+                                            <constraint firstAttribute="height" constant="75" id="w7g-ii-0el"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 of 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rr6-0i-xoU">
                                         <rect key="frame" x="15" y="15" width="81" height="39"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activities Done" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-kl-PT9">
                                         <rect key="frame" x="15" y="54" width="97" height="17"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="SecondaryColor"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
                                     <constraint firstItem="rr6-0i-xoU" firstAttribute="leading" secondItem="PI5-tJ-c4q" secondAttribute="leading" constant="15" id="R95-ic-F1F"/>
                                     <constraint firstAttribute="trailing" secondItem="2Q8-YL-iEk" secondAttribute="trailing" id="U3w-fV-izt"/>
@@ -60,36 +61,37 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2P-wR-mVH" customClass="CustomExtensionUIView" customModule="DailyGoals" customModuleProvider="target">
-                                <rect key="frame" x="168" y="0.0" width="152" height="145"/>
+                            <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v2P-wR-mVH">
+                                <rect key="frame" x="167.66666666666663" y="0.0" width="152.33333333333337" height="145"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.75" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-RZ-Gce">
+                                        <rect key="frame" x="77.333333333333343" y="71" width="75" height="73.666666666666671"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="1N8-Fq-I8w"/>
+                                            <constraint firstAttribute="width" constant="75" id="AZh-L5-rKJ"/>
+                                        </constraints>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dsF-Cq-WcB">
                                         <rect key="frame" x="15" y="15" width="21" height="39"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Productive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9o-W8-HrT">
                                         <rect key="frame" x="41" y="25" width="86" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days in a row" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U42-z9-Goc">
                                         <rect key="frame" x="15" y="54" width="86" height="17"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock-ilustration" translatesAutoresizingMaskIntoConstraints="NO" id="qHd-RZ-Gce">
-                                        <rect key="frame" x="52" y="70" width="100" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="1N8-Fq-I8w"/>
-                                            <constraint firstAttribute="width" constant="100" id="AZh-L5-rKJ"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
-                                <color key="backgroundColor" name="SecondaryColor"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
                                 <constraints>
                                     <constraint firstItem="dsF-Cq-WcB" firstAttribute="top" secondItem="v2P-wR-mVH" secondAttribute="top" constant="15" id="DS6-nb-q16"/>
                                     <constraint firstAttribute="bottom" secondItem="qHd-RZ-Gce" secondAttribute="bottom" id="GkN-Q1-Zk6"/>
@@ -111,7 +113,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="PI5-tJ-c4q" secondAttribute="bottom" id="65g-Tt-YKB"/>
                             <constraint firstAttribute="trailing" secondItem="v2P-wR-mVH" secondAttribute="trailing" id="D43-2L-EkJ"/>
-                            <constraint firstItem="v2P-wR-mVH" firstAttribute="leading" secondItem="PI5-tJ-c4q" secondAttribute="trailing" constant="16" id="Pxg-Qf-YT8"/>
+                            <constraint firstItem="v2P-wR-mVH" firstAttribute="leading" secondItem="PI5-tJ-c4q" secondAttribute="trailing" constant="15" id="Pxg-Qf-YT8"/>
                             <constraint firstItem="PI5-tJ-c4q" firstAttribute="top" secondItem="AZk-0x-Bd7" secondAttribute="top" id="SUc-RF-z0A"/>
                             <constraint firstAttribute="height" constant="145" id="Xe0-To-caA"/>
                             <constraint firstItem="PI5-tJ-c4q" firstAttribute="leading" secondItem="AZk-0x-Bd7" secondAttribute="leading" id="Y0E-yp-4vm"/>
@@ -129,14 +131,18 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dayInRowLabel" destination="dsF-Cq-WcB" id="Fhu-gK-RyM"/>
+                <outlet property="rateActivitiesLabel" destination="rr6-0i-xoU" id="3HW-Q2-NMU"/>
+            </connections>
             <point key="canvasLocation" x="135.38461538461539" y="129.739336492891"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="clock-ilustration" width="612" height="408"/>
-        <image name="time-ilustration" width="556" height="449"/>
-        <namedColor name="SecondaryColor">
-            <color red="0.0" green="0.69900000095367432" blue="0.14800000190734863" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="calendar.circle" catalog="system" width="128" height="121"/>
+        <image name="checkmark.seal.fill" catalog="system" width="128" height="128"/>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.29899999499320984" blue="0.335999995470047" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

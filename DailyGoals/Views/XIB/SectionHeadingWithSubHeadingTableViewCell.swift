@@ -9,6 +9,9 @@ import UIKit
 
 class SectionHeadingWithSubHeadingTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var headingLabel: UILabel!
+    @IBOutlet weak var subHeadingLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

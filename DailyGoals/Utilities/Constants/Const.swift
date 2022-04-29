@@ -30,7 +30,10 @@ class Const {
             image: UIImage(named: "PriorityHigh")!
         )
     ]
-    static let DefaultMasterGoalsPriority = 1 // Medium
+    static let GoalsPriorityLow = 0
+    static let GoalsPriorityMed = 1
+    static let GoalsPriorityHigh = 2
+    static let DefaultMasterGoalsPriority = GoalsPriorityMed // Medium
     
     static let MasterGoalsStatus = [
         "Active",
@@ -39,6 +42,9 @@ class Const {
     static let GoalsStatusActive = 0
     static let GoalsStatusComplete = 1
     static let DefaultMasterGoalsStatus = GoalsStatusActive
+    
+    static let GoalsStatusActiveImage = UIImage(named: "logo-full-transparant")
+    static let GoalsStatusCompletedImage = UIImage(named: "logo-full-transparant-alt")
     
     
     

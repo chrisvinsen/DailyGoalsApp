@@ -63,10 +63,10 @@
                                 <rect key="frame" x="0.0" y="152" width="414" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jTw-o1-jtT">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="712"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="719"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aux-fv-UTJ">
-                                                <rect key="frame" x="16" y="20" width="382" height="692"/>
+                                                <rect key="frame" x="16" y="20" width="382" height="699"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I2I-uQ-Keu">
                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="128"/>
@@ -77,11 +77,13 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="do something weird..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Ks-zIM">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do something weird..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Ks-zIM">
                                                                 <rect key="frame" x="0.0" y="78" width="382" height="50"/>
+                                                                <color key="tintColor" name="PrimaryColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="Yub-Zh-O89"/>
                                                                 </constraints>
+                                                                <color key="textColor" systemColor="systemGrayColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -92,7 +94,7 @@
                                                                         <real key="value" value="1"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" systemColor="systemGray6Color"/>
+                                                                        <color key="value" systemColor="systemGray3Color"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
@@ -112,16 +114,17 @@
                                                         <rect key="frame" x="0.0" y="128" width="382" height="128"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFn-ln-Sib">
-                                                                <rect key="frame" x="0.0" y="10" width="382" height="48"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="20" width="382" height="38"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqC-VK-9Cj">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqC-VK-9Cj">
                                                                 <rect key="frame" x="0.0" y="68" width="382" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="1OF-Xi-zOU"/>
                                                                 </constraints>
+                                                                <color key="tintColor" name="PrimaryColor"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Choose Priority" titleAlignment="automatic">
                                                                     <color key="baseForegroundColor" systemColor="systemGrayColor"/>
                                                                 </buttonConfiguration>
@@ -133,7 +136,7 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                                        <color key="value" systemColor="systemGray6Color"/>
+                                                                        <color key="value" systemColor="systemGray3Color"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                             </button>
@@ -143,24 +146,25 @@
                                                             <constraint firstItem="tFn-ln-Sib" firstAttribute="leading" secondItem="xER-5l-keU" secondAttribute="leading" id="Jhj-jf-lLF"/>
                                                             <constraint firstAttribute="trailing" secondItem="tFn-ln-Sib" secondAttribute="trailing" id="NQz-B6-Gt1"/>
                                                             <constraint firstAttribute="trailing" secondItem="lqC-VK-9Cj" secondAttribute="trailing" id="cp7-p1-lAF"/>
-                                                            <constraint firstItem="tFn-ln-Sib" firstAttribute="top" secondItem="xER-5l-keU" secondAttribute="top" constant="10" id="eLZ-x2-uOy"/>
+                                                            <constraint firstItem="tFn-ln-Sib" firstAttribute="top" secondItem="xER-5l-keU" secondAttribute="top" constant="20" id="eLZ-x2-uOy"/>
                                                             <constraint firstAttribute="bottom" secondItem="lqC-VK-9Cj" secondAttribute="bottom" constant="10" id="fml-T6-WHj"/>
                                                             <constraint firstItem="lqC-VK-9Cj" firstAttribute="leading" secondItem="xER-5l-keU" secondAttribute="leading" id="h9m-7G-GHz"/>
                                                             <constraint firstItem="lqC-VK-9Cj" firstAttribute="top" secondItem="tFn-ln-Sib" secondAttribute="bottom" constant="10" id="xH8-za-H24"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wqt-ql-dWq">
-                                                        <rect key="frame" x="0.0" y="256" width="382" height="200.5"/>
+                                                        <rect key="frame" x="0.0" y="256" width="382" height="204"/>
                                                         <subviews>
                                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="3600" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWf-zM-4II">
-                                                                <rect key="frame" x="0.0" y="40.5" width="382" height="150"/>
+                                                                <rect key="frame" x="0.0" y="44" width="382" height="150"/>
+                                                                <color key="tintColor" name="PrimaryColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="150" id="IG7-hO-BiX"/>
                                                                 </constraints>
                                                             </datePicker>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBr-YC-pdE">
-                                                                <rect key="frame" x="0.0" y="10" width="382" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Spent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBr-YC-pdE">
+                                                                <rect key="frame" x="0.0" y="10" width="382" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -182,16 +186,16 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uxx-ea-m2H">
-                                                        <rect key="frame" x="0.0" y="456.5" width="382" height="100.5"/>
+                                                        <rect key="frame" x="0.0" y="460" width="382" height="104"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqs-PJ-FCg">
-                                                                <rect key="frame" x="0.0" y="10" width="382" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <rect key="frame" x="0.0" y="10" width="382" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMA-sh-G60">
-                                                                <rect key="frame" x="0.0" y="40.5" width="382" height="50"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMA-sh-G60">
+                                                                <rect key="frame" x="0.0" y="44" width="382" height="50"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="ENZ-m7-ab9"/>
                                                                 </constraints>
@@ -224,7 +228,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-T6-Zja">
-                                                        <rect key="frame" x="0.0" y="557" width="382" height="135"/>
+                                                        <rect key="frame" x="0.0" y="564" width="382" height="135"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4W-NR-WJA">
                                                                 <rect key="frame" x="0.0" y="75" width="382" height="50"/>
@@ -232,7 +236,10 @@
                                                                     <constraint firstAttribute="height" constant="50" id="4V5-wE-3qF"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="tinted" title="Remove this goals"/>
+                                                                <buttonConfiguration key="configuration" style="tinted" title="Delete this goals"/>
+                                                                <connections>
+                                                                    <action selector="deleteButtonOnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="K4q-V6-CMp"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -281,6 +288,7 @@
                     </view>
                     <connections>
                         <outlet property="btnDeleteView" destination="Fdi-T6-Zja" id="s4a-ZD-968"/>
+                        <outlet property="goalsLabel" destination="jBW-4o-vX6" id="oWe-aG-xEa"/>
                         <outlet property="goalsNameInput" destination="sEC-Ks-zIM" id="qb9-ic-Sxv"/>
                         <outlet property="goalsTimeInput" destination="nWf-zM-4II" id="45Q-Ec-VDv"/>
                         <outlet property="navigationItem" destination="FeX-Kf-KCS" id="bSS-By-aws"/>
@@ -300,6 +308,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

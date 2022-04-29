@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct WakeUpTimeModel {
+    var dateTime: Date
+    var dayOfWeek: Int
+    var isRemind: Bool
+}

@@ -10,40 +10,76 @@ import UIKit
 class MyDailyGoalsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    var listOfGoals = [Goals]() // Used on table view
-    var listOfActiveGoals = [Goals]()
-    var listOfCompletedGoals = [Goals]()
+    var listOfGoals = [GoalsModel]() // Used on table view
+    var listOfActiveGoals = [GoalsModel]()
+    var listOfCompletedGoals = [GoalsModel]()
+    
+    let goalsHolder = GoalsHolder()
     
     var currentTabIndex: Int = 1
+    var editGoals: GoalsModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seedDummyTodayData() // need to delete this later
-        generateSectionData()
+        loadData(Const.TabTodayGoals)
         
         // Register NIB for table cells
         tableView.register(UINib(nibName: "TodaySummaryTableViewCell", bundle: nil), forCellReuseIdentifier: "TodaySummaryTableViewCell")
         tableView.register(UINib(nibName: "ActiveGoalsTableViewCell", bundle: nil), forCellReuseIdentifier: "ActiveGoalsTableViewCell")
         tableView.register(UINib(nibName: "SectionHeadingTableViewCell", bundle: nil), forCellReuseIdentifier: "SectionHeadingTableViewCell")
+        tableView.register(UINib(nibName: "EmptyDataTableViewCell", bundle: nil), forCellReuseIdentifier: "EmptyDataTableViewCell")
+    }
+    
+    func loadData(_ tabChosen: Int) {
+        var startDateTime: Date
+        var endDateTime: Date
+        
+        let todayDate = Date()
+        let day = todayDate.get(.day)
+        let month = todayDate.get(.month)
+        let year = todayDate.get(.year)
+        
+        switch tabChosen {
+        case Const.TabYesterdayGoals: // YESTERDAY
+            startDateTime = Helper.stringToDateTime("\(month)/\(day - 1)/\(year) 00:00:00")
+            endDateTime = Helper.stringToDateTime("\(month)/\(day - 1)/\(year) 23:59:59")
+        case Const.TabTomorrowGoals: // TOMORROW
+            startDateTime = Helper.stringToDateTime("\(month)/\(day + 1)/\(year) 00:00:00")
+            endDateTime = Helper.stringToDateTime("\(month)/\(day + 1)/\(year) 23:59:59")
+        default: // TODAY AS DEFAULT
+            startDateTime = Helper.stringToDateTime("\(month)/\(day)/\(year) 00:00:00")
+            endDateTime = Helper.stringToDateTime("\(month)/\(day)/\(year) 23:59:59")
+        }
+        
+        guard let loadedData = goalsHolder.retrieve(
+            predicate: NSPredicate(format: "created_time >= %@ AND created_time <= %@", startDateTime.toLocalTime() as CVarArg, endDateTime.toLocalTime() as CVarArg),
+            sortedByKey: "priority_idx",
+            isAsc: false
+        ) else {
+            print("Something Wrong on goalsHolder.retrieve()")
+            return
+        }
+        
+        listOfGoals = loadedData
+        generateSectionData()
+        
+        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Const.SegueToAddDailyGoals {
             let destVC = segue.destination as? AddDailyGoalsController
-//            destVC?.currentTabIndex = 1
+            destVC?.currentTabIndex = currentTabIndex
             destVC?.delegate = self
         } else if segue.identifier == Const.SegueToEditDailyGoals {
             let destVC = segue.destination as? AddDailyGoalsController
-//            destVC?.currentTabIndex = 2
-            destVC?.goals = Goals(name: "test", minutes: 75, priorityIdx: 2, statusIdx: 1)
+            destVC?.currentTabIndex = currentTabIndex
+            destVC?.goals = editGoals
             destVC?.delegate = self
         } else if segue.identifier == Const.SegueToEditWakeUpRoutine {
-            print("WILL DO IT LATER")
+            print("GO TO EDIT WAKE UP ROUTINE SCREEN")
         } else if segue.identifier == Const.SegueToReport {
-//            let destVC = segue.destination as? ReportViewController
-//            navigationController?.visibleViewController?.navigationItem.title = "My Daily Goals"
-            
-            print("TO REPORT")
+            print("GO TO REPORT SCREEN")
         }
     }
     
@@ -51,30 +87,24 @@ class MyDailyGoalsViewController: UIViewController {
         currentTabIndex = sender.selectedSegmentIndex
         
         if currentTabIndex == Const.TabYesterdayGoals {
-            seedDummyYesterdayData()
-            generateSectionData()
-            tableView.reloadData()
+            loadData(Const.TabYesterdayGoals)
             performSegue(withIdentifier: Const.SegueToReport, sender: self)
         } else if currentTabIndex == Const.TabTodayGoals {
-            seedDummyTodayData()
-            generateSectionData()
-            tableView.reloadData()
+            loadData(Const.TabTodayGoals)
         } else if currentTabIndex == Const.TabTomorrowGoals {
-            seedDummyTomorrowData()
-            generateSectionData()
-            tableView.reloadData()
+            loadData(Const.TabTomorrowGoals)
         }
     }
     
     func generateSectionData() {
-        listOfActiveGoals = [Goals]()
+        listOfActiveGoals = [GoalsModel]()
         listOfActiveGoals = listOfGoals.filter {(goals) in
-            return goals.statusIdx == 0
+            return goals.statusIdx == Const.GoalsStatusActive
         }
         
-        listOfCompletedGoals = [Goals]()
+        listOfCompletedGoals = [GoalsModel]()
         listOfCompletedGoals = listOfGoals.filter {(goals) in
-            return goals.statusIdx == 1
+            return goals.statusIdx == Const.GoalsStatusComplete
         }
     }
 }
@@ -84,21 +114,21 @@ extension MyDailyGoalsViewController: UITableViewDelegate, UITableViewDataSource
         
         if self.currentTabIndex == Const.TabYesterdayGoals {
             if section == 0 {
-                return listOfActiveGoals.count
+                return listOfActiveGoals.count == 0 ? 1 : listOfActiveGoals.count
             } else if section == 1 {
-                return listOfCompletedGoals.count
+                return listOfCompletedGoals.count == 0 ? 1 : listOfCompletedGoals.count
             }
         } else if self.currentTabIndex == Const.TabTodayGoals {
             if section == 0 {
                 return 1
             } else if section == 1 {
-                return listOfActiveGoals.count
+                return listOfActiveGoals.count == 0 ? 1 : listOfActiveGoals.count
             } else if section == 2 {
-                return listOfCompletedGoals.count
+                return listOfCompletedGoals.count == 0 ? 1 : listOfCompletedGoals.count
             }
         } else if self.currentTabIndex == Const.TabTomorrowGoals {
             if section == 0 {
-                return listOfActiveGoals.count
+                return listOfActiveGoals.count == 0 ? 1 : listOfActiveGoals.count
             }
         }
         
@@ -141,7 +171,7 @@ extension MyDailyGoalsViewController: UITableViewDelegate, UITableViewDataSource
             }
         } else if currentTabIndex == Const.TabTomorrowGoals {
             if section == 0 {
-                headerCell.headingLabel.text = "Active Goals"
+                headerCell.headingLabel.text = "Tomorrow Goals"
             }
         }
         
@@ -151,28 +181,45 @@ extension MyDailyGoalsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var goalsData: Goals?
+        var goalsData: GoalsModel?
+        
+        var status: Int = -1
+        let emptyCell = tableView.dequeueReusableCell(withIdentifier: "EmptyDataTableViewCell") as! EmptyDataTableViewCell
         
         if currentTabIndex == Const.TabYesterdayGoals {
             if indexPath.section == 0 {
-                goalsData = listOfActiveGoals[indexPath.row]
+                status = Const.GoalsStatusActive
             } else if indexPath.section == 1 {
-                goalsData = listOfCompletedGoals[indexPath.row]
+                status = Const.GoalsStatusComplete
             }
         } else if currentTabIndex == Const.TabTodayGoals {
             if indexPath.section == 0 {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "TodaySummaryTableViewCell") as! TodaySummaryTableViewCell
+                cell.dayInRowLabel.text = "0" // HARDCODE DULU GAN
+                cell.rateActivitiesLabel.text = "\(listOfCompletedGoals.count) of \(listOfActiveGoals.count + listOfCompletedGoals.count)"
                 
                 return cell
             } else if indexPath.section == 1 {
-                goalsData = listOfActiveGoals[indexPath.row]
+                status = Const.GoalsStatusActive
             } else if indexPath.section == 2 {
-                goalsData = listOfCompletedGoals[indexPath.row]
+                status = Const.GoalsStatusComplete
             }
         } else if currentTabIndex == Const.TabTomorrowGoals {
             if indexPath.section == 0 {
-                goalsData = listOfActiveGoals[indexPath.row]
+                status = Const.GoalsStatusActive
             }
+        }
+        
+        if status == Const.GoalsStatusActive {
+            if listOfActiveGoals.count == 0 {
+                return emptyCell
+            }
+            goalsData = listOfActiveGoals[indexPath.row]
+        } else if status == Const.GoalsStatusComplete {
+            if listOfCompletedGoals.count == 0 {
+                return emptyCell
+            }
+            goalsData = listOfCompletedGoals[indexPath.row]
         }
         
         guard let goalsData = goalsData else {
@@ -184,27 +231,74 @@ extension MyDailyGoalsViewController: UITableViewDelegate, UITableViewDataSource
         cell.timeLabel.text = goalsData.getFormattedMinutes()
         cell.priorityLabel.text = Const.MasterGoalsPriority[goalsData.priorityIdx].shortName
         cell.pillsView.backgroundColor = Const.MasterGoalsPriority[goalsData.priorityIdx].color
+        if goalsData.statusIdx == Const.GoalsStatusComplete {
+            cell.goalsImage.image = Const.GoalsStatusCompletedImage
+        } else {
+            cell.goalsImage.image = Const.GoalsStatusActiveImage
+        }
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section != 0 {
-            performSegue(withIdentifier: Const.SegueToEditDailyGoals, sender: self)
+        var section = indexPath.section
+        if currentTabIndex == Const.TabTodayGoals {
+            if indexPath.section == 0 {
+                return
+            }
+            section -= 1
         }
+        
+        if section == 0 {
+            if listOfActiveGoals.count == 0 { return }
+            editGoals = listOfActiveGoals[indexPath.row]
+        } else if section == 1 {
+            if listOfCompletedGoals.count == 0 { return }
+            editGoals = listOfCompletedGoals[indexPath.row]
+        }
+        
+        performSegue(withIdentifier: Const.SegueToEditDailyGoals, sender: self)
+        
     }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        var section = indexPath.section
+        if currentTabIndex == Const.TabTodayGoals || currentTabIndex == Const.TabTomorrowGoals {
+            if indexPath.section == 0 {
+                return nil
+            }
+            section -= 1
+        }
+        
+        if section == 0 {
+            if listOfActiveGoals.count == 0 { return nil }
+            editGoals = listOfActiveGoals[indexPath.row]
+        } else if section == 1 {
+            if listOfCompletedGoals.count == 0 { return nil }
+            editGoals = listOfCompletedGoals[indexPath.row]
+        }
+        
         let uploadedAction = UIContextualAction(style: .normal, title: "", handler: {
                 (action, sourceView, completionHandler) in
             
-            print("test")
-//            self.swipeUploadedFlagAction(book: book)
-//
-//            completionHandler(true)
+            if !self.goalsHolder.update(goalsData: self.editGoals!) {
+                print("Something Wrong on goalsHolder.update()")
+            }
+            
+            self.loadData(self.currentTabIndex)
+
+            completionHandler(true)
         })
         
-        uploadedAction.backgroundColor = UIColor(named: "PrimaryColor")
+        if editGoals?.statusIdx == Const.GoalsStatusActive {
+            uploadedAction.backgroundColor = UIColor(named: "PriorityLowColor")
+            editGoals?.statusIdx = Const.GoalsStatusComplete
+        } else {
+            uploadedAction.backgroundColor = UIColor(named: "PriorityHighColor")
+            editGoals?.statusIdx = Const.GoalsStatusActive
+        }
+        
         uploadedAction.image = UIImage(systemName: "flag.fill")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [uploadedAction])
@@ -212,22 +306,39 @@ extension MyDailyGoalsViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        var section = indexPath.section
+        if currentTabIndex == Const.TabTodayGoals {
+            if indexPath.section == 0 {
+                return nil
+            }
+            section -= 1
+        }
+        
+        if section == 0 {
+            if listOfActiveGoals.count == 0 { return nil }
+            editGoals = listOfActiveGoals[indexPath.row]
+        } else if section == 1 {
+            if listOfCompletedGoals.count == 0 { return nil }
+            editGoals = listOfCompletedGoals[indexPath.row]
+        }
 
         let deleteAction = UIContextualAction(style: .destructive, title: "") {
             (action, sourceView, completionHandler) in
-            print("DELETE")
-//            let book = self.books[(indexPath as NSIndexPath).row] as Book
-            // Delete the book and associated records
-//            self.swipeDeleteAction(book: book, indexPath: indexPath)
-            // Remove the menu option from the screen
-//            completionHandler(true)
+            if !self.goalsHolder.delete(goalsData: self.editGoals!) {
+                print("Something Wrong on goalsHolder.delete()")
+            }
+            
+            self.loadData(self.currentTabIndex)
+
+            completionHandler(true)
         }
         
         deleteAction.image = UIImage(systemName: "trash")
         
         let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction])
         // Delete should not delete automatically
-//        swipeConfiguration.performsFirstActionWithFullSwipe = false
+        swipeConfiguration.performsFirstActionWithFullSwipe = false
         
         return swipeConfiguration
     }
@@ -235,53 +346,7 @@ extension MyDailyGoalsViewController: UITableViewDelegate, UITableViewDataSource
 
 extension MyDailyGoalsViewController: AddDailyGoalsControllerDelegate {
     func reloadTableData(currentTabIndex: Int) {
-        generateSectionData()
-        
-        if currentTabIndex == Const.TabYesterdayGoals {
-            // Reload Yesterday Data
-            tableView.reloadData()
-        } else if currentTabIndex == Const.TabTodayGoals {
-            // Reload Today Data
-            tableView.reloadData()
-        } else if currentTabIndex == Const.TabTomorrowGoals {
-            // Reload Tomorrow Data
-            tableView.reloadData()
-        }
-        
+        loadData(currentTabIndex)
         self.currentTabIndex = currentTabIndex
-    }
-}
-
-
-
-extension MyDailyGoalsViewController {
-    func seedDummyTodayData() {
-        listOfGoals = [Goals]()
-        listOfGoals.append(Goals(name: "Makan", minutes: 300, priorityIdx: 2, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Tidur", minutes: 300, priorityIdx: 1, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Baca Buku", minutes: 75, priorityIdx: 0, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Makan nih", minutes: 30, priorityIdx: 2, statusIdx: 1))
-        listOfGoals.append(Goals(name: "Makan", minutes: 300, priorityIdx: 2, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Tidur", minutes: 300, priorityIdx: 1, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Baca Buku", minutes: 75, priorityIdx: 0, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Makan nih", minutes: 30, priorityIdx: 2, statusIdx: 1))
-    }
-    
-    func seedDummyYesterdayData() {
-        listOfGoals = [Goals]()
-        listOfGoals.append(Goals(name: "Minum", minutes: 150, priorityIdx: 1, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Bobo Ganteng", minutes: 75, priorityIdx: 2, statusIdx: 1))
-        listOfGoals.append(Goals(name: "Makan", minutes: 200, priorityIdx: 0, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Minum", minutes: 150, priorityIdx: 1, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Bobo Ganteng", minutes: 75, priorityIdx: 2, statusIdx: 1))
-    }
-    
-    func seedDummyTomorrowData() {
-        listOfGoals = [Goals]()
-        listOfGoals.append(Goals(name: "Ngoding aja deh", minutes: 250, priorityIdx: 0, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Tidur", minutes: 50, priorityIdx: 1, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Makan nih", minutes: 90, priorityIdx: 2, statusIdx: 1))
-        listOfGoals.append(Goals(name: "Ngoding aja deh", minutes: 250, priorityIdx: 0, statusIdx: 0))
-        listOfGoals.append(Goals(name: "Tidur", minutes: 50, priorityIdx: 1, statusIdx: 0))
     }
 }

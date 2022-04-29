@@ -12,6 +12,7 @@ protocol AddDailyGoalsControllerDelegate: AnyObject {
 }
 
 class AddDailyGoalsController: UIViewController {
+    @IBOutlet weak var goalsLabel: UILabel!
     @IBOutlet weak var goalsNameInput: UITextField!
     @IBOutlet weak var goalsTimeInput: UIDatePicker!
     @IBOutlet weak var priorityButton: UIButton!
@@ -20,21 +21,27 @@ class AddDailyGoalsController: UIViewController {
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var btnDeleteView: UIView!
     
+    let goalsHolder = GoalsHolder()
+    
     // Got from previous screen
     weak var delegate: AddDailyGoalsControllerDelegate?
     var currentTabIndex: Int = 0
     
-    var goals: Goals?
+    var goals: GoalsModel?
     var chosenPriorityIndex: Int = Const.DefaultMasterGoalsPriority
     var chosenStatusIndex: Int = Const.DefaultMasterGoalsStatus
+    
+    var isNewData = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if goals != nil {
             prepareForEdit()
+            isNewData = false
         } else {
             prepareForAdd()
+            isNewData = true
         }
         
         preparePriorityButton()
@@ -44,6 +51,11 @@ class AddDailyGoalsController: UIViewController {
     func prepareForAdd() {
         // Set Title
         title = "Add Daily Goals"
+        if currentTabIndex == Const.TabTomorrowGoals {
+            goalsLabel.text = "Tomorrow I Have to ..."
+        } else {
+            goalsLabel.text = "Today I Have to ..."
+        }
         
         statusView.isHidden = true
         btnDeleteView.isHidden = true
@@ -114,7 +126,8 @@ class AddDailyGoalsController: UIViewController {
     
     
     @IBAction func saveButtonOnTapped(_ sender: Any) {
-        guard let name = goalsNameInput?.text else {
+        let name = goalsNameInput.text ?? ""
+        if name == "" {
             return
         }
         
@@ -126,18 +139,44 @@ class AddDailyGoalsController: UIViewController {
         let hour = calendar.component(.hour, from: dateTime)
         let minute = calendar.component(.minute, from: dateTime)
         
-        goals = Goals(name: name, minutes: (hour * 60 + minute), priorityIdx: chosenPriorityIndex, statusIdx: Const.GoalsStatusActive)
+        var createdTime = Date()
         
-        // save the goals data
-        print("=== SAVE DATA ===")
-        print("name : \(goals?.name)")
-        print("minutes : \(goals?.getFormattedMinutes())")
-        print("priority : \(goals?.getGoalsPriority().name)")
-        print("status : \(goals?.getStatusName())")
-        
-        self.dismiss(animated: true) {
-            self.delegate?.reloadTableData(currentTabIndex: self.currentTabIndex)
+        if currentTabIndex == Const.TabTomorrowGoals {
+            createdTime = createdTime.nextDay
+        } else if currentTabIndex == Const.TabYesterdayGoals {
+            createdTime = createdTime.previousDay
         }
+        
+        if isNewData {
+            // Create Data
+            goals = GoalsModel(
+                name: name,
+                minutes: (hour * 60 + minute),
+                priorityIdx: chosenPriorityIndex,
+                statusIdx: Const.GoalsStatusActive,
+                createdTime: createdTime.toLocalTime()
+            )
+            
+            if !goalsHolder.create(goalsData: goals!) {
+                print("Something Wrong on goalsHolder.create()")
+            }
+        } else {
+            print("HERE")
+            print(goals!)
+            // Update Data
+            goals?.name = name
+            goals?.minutes = (hour * 60 + minute)
+            goals?.priorityIdx = chosenPriorityIndex
+            goals?.statusIdx = chosenStatusIndex
+            
+            if !goalsHolder.update(goalsData: goals!) {
+                print("Something Wrong on goalsHolder.update()")
+            }
+        }
+        
+        self.delegate?.reloadTableData(currentTabIndex: self.currentTabIndex)
+        
+        self.dismiss(animated: true)
     }
     
     
@@ -145,4 +184,13 @@ class AddDailyGoalsController: UIViewController {
         self.dismiss(animated: true)
     }
     
+    @IBAction func deleteButtonOnTapped(_ sender: Any) {
+        if !goalsHolder.delete(goalsData: goals!) {
+            print("Something Wrong on goalsHolder.delete()")
+        }
+        
+        self.delegate?.reloadTableData(currentTabIndex: self.currentTabIndex)
+        
+        self.dismiss(animated: true)
+    }
 }

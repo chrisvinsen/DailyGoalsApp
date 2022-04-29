@@ -9,6 +9,8 @@ import UIKit
 
 class YesterdaySummaryOneTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var rateActivitiesLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

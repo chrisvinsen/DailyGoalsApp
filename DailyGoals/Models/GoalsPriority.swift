@@ -6,3 +6,11 @@
 //
 
 import Foundation
+import UIKit
+
+struct GoalsPriority {
+    var name: String
+    var shortName: String
+    var color: UIColor
+    var image: UIImage
+}

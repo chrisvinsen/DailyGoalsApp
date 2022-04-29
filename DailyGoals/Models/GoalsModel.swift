@@ -12,12 +12,14 @@ struct GoalsModel {
     var minutes: Int
     var priorityIdx: Int
     var statusIdx: Int
+    var createdTime: Date
     
-    init(name: String, minutes: Int, priorityIdx: Int, statusIdx: Int) {
+    init(name: String, minutes: Int, priorityIdx: Int, statusIdx: Int, createdTime: Date) {
         self.name = name
         self.minutes = minutes
         self.priorityIdx = priorityIdx
         self.statusIdx = statusIdx
+        self.createdTime = createdTime
     }
     
     func getFormattedMinutes() -> String {

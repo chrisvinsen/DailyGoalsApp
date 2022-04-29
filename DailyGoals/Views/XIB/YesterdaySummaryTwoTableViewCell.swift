@@ -9,6 +9,12 @@ import UIKit
 
 class YesterdaySummaryTwoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var minutesLabel: UILabel!
+    @IBOutlet weak var highLabel: UILabel!
+    @IBOutlet weak var medLabel: UILabel!
+    @IBOutlet weak var lowLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

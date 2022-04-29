@@ -338,9 +338,17 @@
                     </view>
                     <connections>
                         <outlet property="activatePushNotifSwitch" destination="Ryl-4i-DFY" id="sQe-6a-5Jh"/>
+                        <outlet property="friTime" destination="ASe-g7-qIk" id="yEe-gr-iOo"/>
+                        <outlet property="monTime" destination="Zol-Zz-Ihd" id="38a-fv-77C"/>
+                        <outlet property="satTime" destination="Ror-Iu-UF3" id="EB3-wp-qtx"/>
                         <outlet property="sunMonDifferentView" destination="JEE-Ua-uOk" id="c9u-rb-hNq"/>
                         <outlet property="sunMonSameView" destination="uhv-j0-dxJ" id="CN1-P4-D7y"/>
                         <outlet property="sunMonSwitch" destination="g0F-CT-kmE" id="pXy-C7-eKA"/>
+                        <outlet property="sunMonTime" destination="Byw-GF-yoN" id="oYi-hX-qO5"/>
+                        <outlet property="sunTime" destination="war-me-057" id="Lm2-re-AMf"/>
+                        <outlet property="thuTime" destination="ULp-2A-kar" id="eUn-NA-WaX"/>
+                        <outlet property="tueTime" destination="4I1-kG-5I5" id="Jyb-UL-WUH"/>
+                        <outlet property="wedTime" destination="wpk-Qy-Jbw" id="Qjc-cD-p09"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
