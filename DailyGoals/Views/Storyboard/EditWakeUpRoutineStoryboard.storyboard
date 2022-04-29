@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Edit Wake Up Routine Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="EditWakeUpRoutineController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="EditWakeUpRoutineController" customModule="DailyGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSt-dE-fnY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <color key="backgroundColor" name="PrimaryColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" name="PrimaryColor"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="My Routine" id="BMv-kA-7CE">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="oG0-kg-aml">
+                                            <connections>
+                                                <action selector="cancelButtonOnTapped:" destination="Y6W-OH-hqX" id="LFk-aP-XvD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="pLe-iL-VuO">
+                                            <connections>
+                                                <action selector="saveButtonOnTapped:" destination="Y6W-OH-hqX" id="TGl-Ge-D0y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pB-G1-eK6">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPo-MV-eq9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="864"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j8N-Cd-ZaQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="864"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ShK-Qs-TP4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What time do you usually wake up?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSN-h2-Jxj">
+                                                                <rect key="frame" x="16" y="30" width="382" height="70"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="eSN-h2-Jxj" secondAttribute="bottom" constant="20" id="3WA-Pa-QHU"/>
+                                                            <constraint firstAttribute="trailing" secondItem="eSN-h2-Jxj" secondAttribute="trailing" constant="16" id="BVy-Bv-uiM"/>
+                                                            <constraint firstItem="eSN-h2-Jxj" firstAttribute="top" secondItem="ShK-Qs-TP4" secondAttribute="top" constant="30" id="WmO-JV-zlH"/>
+                                                            <constraint firstItem="eSN-h2-Jxj" firstAttribute="leading" secondItem="ShK-Qs-TP4" secondAttribute="leading" constant="16" id="cDi-hL-JuZ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iqr-bD-VcQ">
+                                                        <rect key="frame" x="0.0" y="120" width="414" height="51"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVI-ek-Ppz">
+                                                                <rect key="frame" x="16" y="10" width="382" height="31"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun-Mon Always Same" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pig-ie-HQm">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g0F-CT-kmE">
+                                                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="sunMonSameOnToggled:" destination="Y6W-OH-hqX" eventType="valueChanged" id="hCX-yy-L16"/>
+                                                                        </connections>
+                                                                    </switch>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="mVI-ek-Ppz" firstAttribute="leading" secondItem="Iqr-bD-VcQ" secondAttribute="leading" constant="16" id="4Mk-iY-1eK"/>
+                                                            <constraint firstAttribute="bottom" secondItem="mVI-ek-Ppz" secondAttribute="bottom" constant="10" id="OaS-Oq-Jn3"/>
+                                                            <constraint firstItem="mVI-ek-Ppz" firstAttribute="top" secondItem="Iqr-bD-VcQ" secondAttribute="top" constant="10" id="SBD-F9-diM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="mVI-ek-Ppz" secondAttribute="trailing" constant="16" id="Y2t-Ke-8dO"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhv-j0-dxJ">
+                                                        <rect key="frame" x="0.0" y="171" width="414" height="90"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Emw-0c-NVT">
+                                                                <rect key="frame" x="16" y="20" width="382" height="50"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uve-OP-j3O">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byw-GF-yoN">
+                                                                        <rect key="frame" x="40" y="0.0" width="342" height="50"/>
+                                                                        <color key="tintColor" name="PrimaryColor"/>
+                                                                        <date key="date" timeIntervalSinceReferenceDate="672796800.27508998">
+                                                                            <!--2022-04-28 00:00:00 +0000-->
+                                                                        </date>
+                                                                    </datePicker>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Emw-0c-NVT" firstAttribute="top" secondItem="uhv-j0-dxJ" secondAttribute="top" constant="20" id="Mqy-Ua-Ikf"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Emw-0c-NVT" secondAttribute="trailing" constant="16" id="O59-1M-TLh"/>
+                                                            <constraint firstItem="Emw-0c-NVT" firstAttribute="leading" secondItem="uhv-j0-dxJ" secondAttribute="leading" constant="16" id="QYb-Zk-WyG"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Emw-0c-NVT" secondAttribute="bottom" constant="20" id="ncw-Wq-axh"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEE-Ua-uOk">
+                                                        <rect key="frame" x="0.0" y="261" width="414" height="552"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="blp-zn-mcS">
+                                                                <rect key="frame" x="16" y="20" width="382" height="512"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOD-iM-uXz">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="140"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-6N-c8G">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="140"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zol-Zz-Ihd">
+                                                                                <rect key="frame" x="64.5" y="0.0" width="317.5" height="140"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672796800.19006503">
+                                                                                    <!--2022-04-28 00:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4jv-1y-slf">
+                                                                        <rect key="frame" x="0.0" y="152" width="382" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNp-4D-n3w">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4I1-kG-5I5">
+                                                                                <rect key="frame" x="67.5" y="0.0" width="314.5" height="50"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672796800.19006503">
+                                                                                    <!--2022-04-28 00:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8iL-FL-R8N">
+                                                                        <rect key="frame" x="0.0" y="214" width="382" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H11-tB-1uv">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpk-Qy-Jbw">
+                                                                                <rect key="frame" x="94.5" y="0.0" width="287.5" height="50"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672796800.19006503">
+                                                                                    <!--2022-04-28 00:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBq-ja-x38">
+                                                                        <rect key="frame" x="0.0" y="276" width="382" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thursday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMv-DA-mWu">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="75.5" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULp-2A-kar">
+                                                                                <rect key="frame" x="75.5" y="0.0" width="306.5" height="50"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672796800.19006503">
+                                                                                    <!--2022-04-28 00:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-NK-5iw">
+                                                                        <rect key="frame" x="0.0" y="338" width="382" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lW5-qx-TMK">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASe-g7-qIk">
+                                                                                <rect key="frame" x="49.5" y="0.0" width="332.5" height="50"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672796800.19006503">
+                                                                                    <!--2022-04-28 00:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhW-bn-HAf">
+                                                                        <rect key="frame" x="0.0" y="400" width="382" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saturday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Com-w4-rRt">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ror-Iu-UF3">
+                                                                                <rect key="frame" x="72" y="0.0" width="310" height="50"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672800400.19006503">
+                                                                                    <!--2022-04-28 01:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kqH-YQ-Y8b">
+                                                                        <rect key="frame" x="0.0" y="462" width="382" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvJ-9y-AJQ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-me-057">
+                                                                                <rect key="frame" x="60" y="0.0" width="322" height="50"/>
+                                                                                <color key="tintColor" name="PrimaryColor"/>
+                                                                                <date key="date" timeIntervalSinceReferenceDate="672800400.19006503">
+                                                                                    <!--2022-04-28 01:00:00 +0000-->
+                                                                                </date>
+                                                                            </datePicker>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="blp-zn-mcS" secondAttribute="bottom" constant="20" id="0VE-Hv-2jf"/>
+                                                            <constraint firstItem="blp-zn-mcS" firstAttribute="leading" secondItem="JEE-Ua-uOk" secondAttribute="leading" constant="16" id="Ys3-pc-4Rg"/>
+                                                            <constraint firstAttribute="trailing" secondItem="blp-zn-mcS" secondAttribute="trailing" constant="16" id="gA5-Sp-TXu"/>
+                                                            <constraint firstItem="blp-zn-mcS" firstAttribute="top" secondItem="JEE-Ua-uOk" secondAttribute="top" constant="20" id="obj-o2-xkU"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ANc-Kd-cRh">
+                                                        <rect key="frame" x="0.0" y="813" width="414" height="51"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Tm-Nc-ph7">
+                                                                <rect key="frame" x="16" y="10" width="382" height="31"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activate Daily Reminder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEu-xC-olX">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="333" height="31"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ryl-4i-DFY">
+                                                                        <rect key="frame" x="333" y="0.0" width="51" height="31"/>
+                                                                        <connections>
+                                                                            <action selector="activatePushNotifOnToggled:" destination="Y6W-OH-hqX" eventType="valueChanged" id="SDv-MX-Fee"/>
+                                                                        </connections>
+                                                                    </switch>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="4Tm-Nc-ph7" firstAttribute="leading" secondItem="ANc-Kd-cRh" secondAttribute="leading" constant="16" id="7rP-x0-ulE"/>
+                                                            <constraint firstItem="4Tm-Nc-ph7" firstAttribute="top" secondItem="ANc-Kd-cRh" secondAttribute="top" constant="10" id="LoA-8J-VFw"/>
+                                                            <constraint firstAttribute="trailing" secondItem="4Tm-Nc-ph7" secondAttribute="trailing" constant="16" id="RaC-i8-nDx"/>
+                                                            <constraint firstAttribute="bottom" secondItem="4Tm-Nc-ph7" secondAttribute="bottom" constant="10" id="fQP-5K-R2G"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="j8N-Cd-ZaQ" secondAttribute="bottom" id="1xb-Ra-sG2"/>
+                                            <constraint firstAttribute="trailing" secondItem="j8N-Cd-ZaQ" secondAttribute="trailing" id="UdZ-qt-B9f"/>
+                                            <constraint firstItem="j8N-Cd-ZaQ" firstAttribute="leading" secondItem="NPo-MV-eq9" secondAttribute="leading" id="Wmb-dD-5tn"/>
+                                            <constraint firstItem="j8N-Cd-ZaQ" firstAttribute="top" secondItem="NPo-MV-eq9" secondAttribute="top" id="hmK-VO-kRR"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="NPo-MV-eq9" secondAttribute="bottom" id="QtD-wT-8B2"/>
+                                    <constraint firstItem="NPo-MV-eq9" firstAttribute="leading" secondItem="3pB-G1-eK6" secondAttribute="leading" id="SNz-1h-g6r"/>
+                                    <constraint firstItem="NPo-MV-eq9" firstAttribute="top" secondItem="3pB-G1-eK6" secondAttribute="top" id="a9d-hW-pI0"/>
+                                    <constraint firstAttribute="trailing" secondItem="NPo-MV-eq9" secondAttribute="trailing" id="wlG-tn-tpy"/>
+                                    <constraint firstItem="NPo-MV-eq9" firstAttribute="width" secondItem="3pB-G1-eK6" secondAttribute="width" id="xLQ-e7-cnF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Lgj-NB-cG6"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="9DP-6e-4BP"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BSt-dE-fnY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7XV-bn-uHy"/>
+                            <constraint firstItem="3pB-G1-eK6" firstAttribute="top" secondItem="BSt-dE-fnY" secondAttribute="bottom" id="ECE-sx-SRR"/>
+                            <constraint firstItem="BSt-dE-fnY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="JS7-Bu-2BV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="3pB-G1-eK6" secondAttribute="bottom" id="XjN-HL-kWd"/>
+                            <constraint firstItem="BSt-dE-fnY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="by3-92-COY"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3pB-G1-eK6" secondAttribute="trailing" id="jJy-Lc-DG8"/>
+                            <constraint firstItem="3pB-G1-eK6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="kpt-Tn-3gK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activatePushNotifSwitch" destination="Ryl-4i-DFY" id="sQe-6a-5Jh"/>
+                        <outlet property="sunMonDifferentView" destination="JEE-Ua-uOk" id="c9u-rb-hNq"/>
+                        <outlet property="sunMonSameView" destination="uhv-j0-dxJ" id="CN1-P4-D7y"/>
+                        <outlet property="sunMonSwitch" destination="g0F-CT-kmE" id="pXy-C7-eKA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26.086956521739133" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.29899999499320984" blue="0.335999995470047" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

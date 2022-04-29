@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dOf-ck-pJi">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="byX-e3-NMG">
+            <objects>
+                <navigationController id="dOf-ck-pJi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="eIw-fR-pDV">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="PrimaryColor"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="PrimaryColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="PrimaryColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Ak-o0-jEi" kind="relationship" relationship="rootViewController" id="xh8-pq-yGR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Nm-4N-OE9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1614" y="101"/>
+        </scene>
+        <!--My Daily Goals-->
+        <scene sceneID="nb0-VN-GsG">
+            <objects>
+                <viewController id="9Ak-o0-jEi" customClass="MyDailyGoalsViewController" customModule="DailyGoals" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QSn-Fk-98p">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MQi-rY-dPB">
+                                <rect key="frame" x="16" y="156" width="358" height="654"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-md-xKO">
+                                        <rect key="frame" x="0.0" y="0.0" width="358" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="wUv-h8-8uI"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Yesterday"/>
+                                            <segment title="Today"/>
+                                            <segment title="Tomorrow"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlOnTapped:" destination="9Ak-o0-jEi" eventType="valueChanged" id="9kF-3N-5Vn"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-zc-Mru">
+                                        <rect key="frame" x="0.0" y="46" width="358" height="608"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="9Ak-o0-jEi" id="mRR-qe-K6o"/>
+                                            <outlet property="delegate" destination="9Ak-o0-jEi" id="9o7-e5-H4a"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E6t-zc-Mru" secondAttribute="trailing" id="5nc-cT-UyC"/>
+                                    <constraint firstItem="6Sb-md-xKO" firstAttribute="top" secondItem="MQi-rY-dPB" secondAttribute="top" id="7me-dA-1YJ"/>
+                                    <constraint firstItem="6Sb-md-xKO" firstAttribute="leading" secondItem="MQi-rY-dPB" secondAttribute="leading" id="ZJ7-dZ-H87"/>
+                                    <constraint firstItem="E6t-zc-Mru" firstAttribute="top" secondItem="6Sb-md-xKO" secondAttribute="bottom" constant="6" id="cL8-oy-W6L"/>
+                                    <constraint firstItem="E6t-zc-Mru" firstAttribute="leading" secondItem="MQi-rY-dPB" secondAttribute="leading" id="llf-ap-DoS"/>
+                                    <constraint firstAttribute="bottom" secondItem="E6t-zc-Mru" secondAttribute="bottom" id="uuP-HW-s2N"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Sb-md-xKO" secondAttribute="trailing" id="zOy-1G-zLI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yX0-nl-8Rk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MQi-rY-dPB" firstAttribute="top" secondItem="yX0-nl-8Rk" secondAttribute="top" constant="16" id="Ltb-gP-6GE"/>
+                            <constraint firstItem="yX0-nl-8Rk" firstAttribute="bottom" secondItem="MQi-rY-dPB" secondAttribute="bottom" id="aPu-WE-sHB"/>
+                            <constraint firstItem="MQi-rY-dPB" firstAttribute="leading" secondItem="yX0-nl-8Rk" secondAttribute="leading" constant="16" id="ovj-sI-Gyb"/>
+                            <constraint firstItem="yX0-nl-8Rk" firstAttribute="trailing" secondItem="MQi-rY-dPB" secondAttribute="trailing" constant="16" id="sa1-cA-cXB"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Daily Goals" id="NyT-I6-0Dy">
+                        <barButtonItem key="leftBarButtonItem" image="clock.fill" catalog="system" id="zYi-6L-On9">
+                            <color key="tintColor" name="PrimaryColor"/>
+                            <connections>
+                                <segue destination="ibo-SU-wds" kind="presentation" identifier="LoadEditWakeUpRoutine" id="NCG-Qy-meC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="cMk-ya-o2F">
+                            <color key="tintColor" name="PrimaryColor"/>
+                            <connections>
+                                <segue destination="T4N-Y7-BRg" kind="presentation" identifier="LoadsAddDailyGoals" id="CO7-Yf-Un4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="E6t-zc-Mru" id="llC-dD-LD8"/>
+                        <segue destination="T4N-Y7-BRg" kind="presentation" identifier="LoadsEditDailyGoals" id="O1N-yw-wXE"/>
+                        <segue destination="UNo-FT-ttb" kind="presentation" identifier="LoadsReport" id="Y0G-2x-Af3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTK-zo-EpQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-703" y="101"/>
+        </scene>
+        <!--ReportViewController-->
+        <scene sceneID="Fue-D5-jJJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ReportStoryboard" referencedIdentifier="ReportViewController" id="UNo-FT-ttb" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Gfs-Pk-TXQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6sj-fx-vtv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-256" y="522"/>
+        </scene>
+        <!--AddDailyGoalsStoryboard-->
+        <scene sceneID="DbM-a4-swI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddDailyGoalsStoryboard" id="T4N-Y7-BRg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3kB-9y-9tf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92" y="183"/>
+        </scene>
+        <!--EditWakeUpRoutineStoryboard-->
+        <scene sceneID="yzd-YP-j7Y">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditWakeUpRoutineStoryboard" id="ibo-SU-wds" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBT-EB-O0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73" y="-8"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="O1N-yw-wXE"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" name="PrimaryColor"/>
+    <resources>
+        <image name="clock.fill" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.29899999499320984" blue="0.335999995470047" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
