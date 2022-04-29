@@ -1,7 +1,7 @@
 
 # Daily Goals - Productivity Apps
 
-**Dails Goals** is generally an app for people to "rebahan".
+**Daily Goals** is generally an app for people who likes "rebahan".
 
 Or the cool language is An App that helps to **increase daily productivity** by organizing the goals and activities by providing a personal assistant to help manage their daily activities wisely.
 
