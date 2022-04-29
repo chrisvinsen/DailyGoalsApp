@@ -10,11 +10,14 @@ This app is proposed to be used as **Nano Challenge 1** in **Apple Developer Aca
 - 1.5 days -> visualize the solution concept for Low-Fi and Hi-Fi
 - 2 days -> code and manual testing 
 - 0.5 days -> receiving feedback from others
-## Screenshot
 
-[Clickable Prototype Design](https://sketch.com/s/a02b96b4-1526-473d-aa20-618b5f7a212e/a/7yo7J7Y/play)
+## Features
 
-<img src="/Screenshots/1. My Daily Goals Screen.png" width="250" alt="My Daily Goals Screen"> <img src="/Screenshots/2. Yesterday Report Screen.png" width="250" alt="Yesterday Report Screen"> <img src="/Screenshots/3. Edit My Routine Screen.png" width="250" alt="Edit My Routine Screen"> <img src="/Screenshots/4. Add Daily Goals Screen.png" width="250" alt="Add Daily Goals Screen"> <img src="/Screenshots/5. Edit Daily Goals Screen.png" width="250" alt="Edit Daily Goals Screen">
+- Create, edit, delete Goals 
+- View list of active and completed Goals
+- View daily report
+- Setup reminder for push notification
+
 
 ## What do I use mainly
 
@@ -27,12 +30,11 @@ This app is proposed to be used as **Nano Challenge 1** in **Apple Developer Aca
 | 5 | Simple MVC Arch      | As architecture and structuring folder used                                   |
 
 
-## Features
+## Screenshot
 
-- Create, edit, delete Goals 
-- View list of active and completed Goals
-- View daily report
-- Setup reminder for push notification
+[Clickable Prototype Design](https://sketch.com/s/a02b96b4-1526-473d-aa20-618b5f7a212e/a/7yo7J7Y/play)
+
+<img src="/Screenshots/1. My Daily Goals Screen.png" width="250" alt="My Daily Goals Screen"> <img src="/Screenshots/2. Yesterday Report Screen.png" width="250" alt="Yesterday Report Screen"> <img src="/Screenshots/3. Edit My Routine Screen.png" width="250" alt="Edit My Routine Screen"> <img src="/Screenshots/4. Add Daily Goals Screen.png" width="250" alt="Add Daily Goals Screen"> <img src="/Screenshots/5. Edit Daily Goals Screen.png" width="250" alt="Edit Daily Goals Screen">
 
 
 ## Special thanks to
