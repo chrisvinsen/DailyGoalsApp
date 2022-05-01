@@ -35,20 +35,19 @@ class MyDailyGoalsViewController: UIViewController {
         var endDateTime: Date
         
         let todayDate = Date()
-        let day = todayDate.get(.day)
-        let month = todayDate.get(.month)
-        let year = todayDate.get(.year)
+        let yesterdayDate = Date().previousDay
+        let tomorrowDate = Date().nextDay
         
         switch tabChosen {
         case Const.TabYesterdayGoals: // YESTERDAY
-            startDateTime = Helper.stringToDateTime("\(month)/\(day - 1)/\(year) 00:00:00")
-            endDateTime = Helper.stringToDateTime("\(month)/\(day - 1)/\(year) 23:59:59")
+            startDateTime = Helper.stringToDateTime("\(yesterdayDate.get(.month))/\(yesterdayDate.get(.day))/\(yesterdayDate.get(.year)) 00:00:00")
+            endDateTime = Helper.stringToDateTime("\(yesterdayDate.get(.month))/\(yesterdayDate.get(.day))/\(yesterdayDate.get(.year)) 23:59:59")
         case Const.TabTomorrowGoals: // TOMORROW
-            startDateTime = Helper.stringToDateTime("\(month)/\(day + 1)/\(year) 00:00:00")
-            endDateTime = Helper.stringToDateTime("\(month)/\(day + 1)/\(year) 23:59:59")
+            startDateTime = Helper.stringToDateTime("\(tomorrowDate.get(.month))/\(tomorrowDate.get(.day))/\(tomorrowDate.get(.year)) 00:00:00")
+            endDateTime = Helper.stringToDateTime("\(tomorrowDate.get(.month))/\(tomorrowDate.get(.day))/\(tomorrowDate.get(.year)) 23:59:59")
         default: // TODAY AS DEFAULT
-            startDateTime = Helper.stringToDateTime("\(month)/\(day)/\(year) 00:00:00")
-            endDateTime = Helper.stringToDateTime("\(month)/\(day)/\(year) 23:59:59")
+            startDateTime = Helper.stringToDateTime("\(todayDate.get(.month))/\(todayDate.get(.day))/\(todayDate.get(.year)) 00:00:00")
+            endDateTime = Helper.stringToDateTime("\(todayDate.get(.month))/\(todayDate.get(.day))/\(todayDate.get(.year)) 23:59:59")
         }
         
         guard let loadedData = goalsHolder.retrieve(
