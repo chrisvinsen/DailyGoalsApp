@@ -43,7 +43,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pB-G1-eK6">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3pB-G1-eK6">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NPo-MV-eq9">
@@ -313,6 +313,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="tintColor" name="PrimaryColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="NPo-MV-eq9" secondAttribute="bottom" id="QtD-wT-8B2"/>
                                     <constraint firstItem="NPo-MV-eq9" firstAttribute="leading" secondItem="3pB-G1-eK6" secondAttribute="leading" id="SNz-1h-g6r"/>

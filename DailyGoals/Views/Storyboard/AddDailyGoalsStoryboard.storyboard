@@ -98,6 +98,9 @@
                                                                         <color key="value" systemColor="systemGray3Color"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="onFinishWriteGoals:" destination="Y6W-OH-hqX" eventType="primaryActionTriggered" id="257-QA-WSB"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

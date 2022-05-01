@@ -31,7 +31,7 @@ class EditWakeUpRoutineController: UIViewController {
         
         var isSunMonSame = true
         var isActivatePushNotif = true
-        var sunMonDate: Date = Helper.stringToDateTime("07:00", "hh:mm")
+        var sunMonDate: Date = Helper.stringToDateTime("14:00", "HH:mm")
         
         if let wakeUpTimeData = wakeUpTimeHolder.retrieve() {
             // Prepare data

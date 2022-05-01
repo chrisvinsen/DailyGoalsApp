@@ -21,6 +21,10 @@ class AddDailyGoalsController: UIViewController {
     @IBOutlet weak var statusView: UIView!
     @IBOutlet weak var btnDeleteView: UIView!
     
+    @IBAction func onFinishWriteGoals(_ sender: UITextField) {
+        sender.resignFirstResponder()
+    }
+    
     let goalsHolder = GoalsHolder()
     
     // Got from previous screen
