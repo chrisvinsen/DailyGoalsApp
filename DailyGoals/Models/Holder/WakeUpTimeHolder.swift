@@ -28,7 +28,7 @@ class WakeUpTimeHolder {
             try context.save()
             try context.parent?.save()
         } catch {
-            print(error)
+            print("Something Wrong on GoalsHolder create")
             return false
         }
         
@@ -85,11 +85,11 @@ class WakeUpTimeHolder {
                     try context.save()
                     try context.parent?.save()
                 } catch {
-                    print(error)
+                    print("Something Wrong on GoalsHolder create")
                     return false
                 }
             } catch let error as NSError {
-                print(error)
+                print("Error due to : \(error.localizedDescription)")
                 return false
             }
         }
@@ -114,11 +114,11 @@ class WakeUpTimeHolder {
                 try context.save()
                 try context.parent?.save()
             } catch {
-                print(error)
+                print("Something Wrong on GoalsHolder create")
                 return false
             }
         } catch let error as NSError {
-            print(error)
+            print("Error due to : \(error.localizedDescription)")
             return false
         }
         

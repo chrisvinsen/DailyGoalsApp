@@ -79,6 +79,7 @@
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Do something weird..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-Ks-zIM">
                                                                 <rect key="frame" x="0.0" y="78" width="382" height="50"/>
+                                                                <color key="backgroundColor" name="AccentColor"/>
                                                                 <color key="tintColor" name="PrimaryColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="Yub-Zh-O89"/>
@@ -121,6 +122,7 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqC-VK-9Cj">
                                                                 <rect key="frame" x="0.0" y="68" width="382" height="50"/>
+                                                                <color key="backgroundColor" name="AccentColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="1OF-Xi-zOU"/>
                                                                 </constraints>
@@ -196,6 +198,7 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMA-sh-G60">
                                                                 <rect key="frame" x="0.0" y="44" width="382" height="50"/>
+                                                                <color key="backgroundColor" name="AccentColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="ENZ-m7-ab9"/>
                                                                 </constraints>
@@ -303,6 +306,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="PrimaryColor">
             <color red="1" green="0.29899999499320984" blue="0.335999995470047" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

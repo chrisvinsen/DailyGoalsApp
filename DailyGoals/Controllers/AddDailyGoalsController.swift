@@ -161,8 +161,6 @@ class AddDailyGoalsController: UIViewController {
                 print("Something Wrong on goalsHolder.create()")
             }
         } else {
-            print("HERE")
-            print(goals!)
             // Update Data
             goals?.name = name
             goals?.minutes = (hour * 60 + minute)

@@ -28,7 +28,7 @@ class GoalsHolder {
             try context.save()
             try context.parent?.save()
         } catch {
-            print(error)
+            print("Something Wrong on GoalsHolder create")
             return false
         }
         
@@ -51,7 +51,6 @@ class GoalsHolder {
         
         do {
             let result = try context.fetch(fetchRequest)
-            print("COUNT \(result.count)")
             for data in result as! [NSManagedObject] {
                 response.append(
                     GoalsModel(
@@ -90,11 +89,11 @@ class GoalsHolder {
                 try context.save()
                 try context.parent?.save()
             } catch {
-                print(error)
+                print("Something Wrong on GoalsHolder update")
                 return false
             }
         } catch let error as NSError {
-            print(error)
+            print("Error due to : \(error.localizedDescription)")
             return false
         }
         
@@ -118,11 +117,11 @@ class GoalsHolder {
                 try context.save()
                 try context.parent?.save()
             } catch {
-                print(error)
+                print("Something Wrong on GoalsHolder delete")
                 return false
             }
         } catch let error as NSError {
-            print(error)
+            print("Error due to : \(error.localizedDescription)")
             return false
         }
         
