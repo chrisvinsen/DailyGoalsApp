@@ -35,13 +35,13 @@
 		A6ABDE16281A5165002CFB28 /* ReportStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6ABDE15281A5165002CFB28 /* ReportStoryboard.storyboard */; };
 		A6ABDE18281A51E4002CFB28 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABDE17281A51E4002CFB28 /* ReportViewController.swift */; };
 		A6ABDE1A281A5C75002CFB28 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6ABDE19281A5C75002CFB28 /* Enum.swift */; };
+		A6C0D687281E04D1004E391D /* EmptyDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C0D685281E04D1004E391D /* EmptyDataTableViewCell.swift */; };
+		A6C0D688281E04D1004E391D /* EmptyDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6C0D686281E04D1004E391D /* EmptyDataTableViewCell.xib */; };
 		A6C11D10281A9263000C0D15 /* WakeUpTimeHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C11D0F281A9263000C0D15 /* WakeUpTimeHolder.swift */; };
 		A6DA3862281AAF8300AA5D53 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA3861281AAF8300AA5D53 /* Helper.swift */; };
 		A6DA3864281AB2D000AA5D53 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA3863281AB2D000AA5D53 /* Date.swift */; };
 		A6DA3866281ACB5C00AA5D53 /* WakeUpTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA3865281ACB5C00AA5D53 /* WakeUpTimeModel.swift */; };
 		A6DA3868281ACCF000AA5D53 /* GoalsHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DA3867281ACCF000AA5D53 /* GoalsHolder.swift */; };
-		A6E36777281B0D3F00413032 /* EmptyDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E36775281B0D3F00413032 /* EmptyDataTableViewCell.swift */; };
-		A6E36778281B0D3F00413032 /* EmptyDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E36776281B0D3F00413032 /* EmptyDataTableViewCell.xib */; };
 		A6E3677B281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E36779281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.swift */; };
 		A6E3677C281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E3677A281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.xib */; };
 		A6E36783281B38A100413032 /* YesterdaySummaryOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E36781281B38A100413032 /* YesterdaySummaryOneTableViewCell.swift */; };
@@ -100,13 +100,13 @@
 		A6ABDE15281A5165002CFB28 /* ReportStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReportStoryboard.storyboard; sourceTree = "<group>"; };
 		A6ABDE17281A51E4002CFB28 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		A6ABDE19281A5C75002CFB28 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		A6C0D685281E04D1004E391D /* EmptyDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataTableViewCell.swift; sourceTree = "<group>"; };
+		A6C0D686281E04D1004E391D /* EmptyDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataTableViewCell.xib; sourceTree = "<group>"; };
 		A6C11D0F281A9263000C0D15 /* WakeUpTimeHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeHolder.swift; sourceTree = "<group>"; };
 		A6DA3861281AAF8300AA5D53 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A6DA3863281AB2D000AA5D53 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A6DA3865281ACB5C00AA5D53 /* WakeUpTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakeUpTimeModel.swift; sourceTree = "<group>"; };
 		A6DA3867281ACCF000AA5D53 /* GoalsHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalsHolder.swift; sourceTree = "<group>"; };
-		A6E36775281B0D3F00413032 /* EmptyDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDataTableViewCell.swift; sourceTree = "<group>"; };
-		A6E36776281B0D3F00413032 /* EmptyDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyDataTableViewCell.xib; sourceTree = "<group>"; };
 		A6E36779281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeadingWithSubHeadingTableViewCell.swift; sourceTree = "<group>"; };
 		A6E3677A281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeadingWithSubHeadingTableViewCell.xib; sourceTree = "<group>"; };
 		A6E36781281B38A100413032 /* YesterdaySummaryOneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YesterdaySummaryOneTableViewCell.swift; sourceTree = "<group>"; };
@@ -253,14 +253,14 @@
 				A677F20E281972C2007D500D /* TodaySummaryTableViewCell.xib */,
 				A677F2112819778E007D500D /* SectionHeadingTableViewCell.swift */,
 				A677F2122819778E007D500D /* SectionHeadingTableViewCell.xib */,
-				A6E36775281B0D3F00413032 /* EmptyDataTableViewCell.swift */,
-				A6E36776281B0D3F00413032 /* EmptyDataTableViewCell.xib */,
 				A6E36779281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.swift */,
 				A6E3677A281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.xib */,
 				A6E36781281B38A100413032 /* YesterdaySummaryOneTableViewCell.swift */,
 				A6E36782281B38A100413032 /* YesterdaySummaryOneTableViewCell.xib */,
 				A6E36785281B3B5F00413032 /* YesterdaySummaryTwoTableViewCell.swift */,
 				A6E36786281B3B5F00413032 /* YesterdaySummaryTwoTableViewCell.xib */,
+				A6C0D685281E04D1004E391D /* EmptyDataTableViewCell.swift */,
+				A6C0D686281E04D1004E391D /* EmptyDataTableViewCell.xib */,
 			);
 			path = XIB;
 			sourceTree = "<group>";
@@ -415,8 +415,8 @@
 				A6E36788281B3B5F00413032 /* YesterdaySummaryTwoTableViewCell.xib in Resources */,
 				A677F1C62818D629007D500D /* Assets.xcassets in Resources */,
 				A677F1C12818D628007D500D /* Main.storyboard in Resources */,
-				A6E36778281B0D3F00413032 /* EmptyDataTableViewCell.xib in Resources */,
 				A677F210281972C2007D500D /* TodaySummaryTableViewCell.xib in Resources */,
+				A6C0D688281E04D1004E391D /* EmptyDataTableViewCell.xib in Resources */,
 				A6E3677C281B33E000413032 /* SectionHeadingWithSubHeadingTableViewCell.xib in Resources */,
 				A6E36784281B38A100413032 /* YesterdaySummaryOneTableViewCell.xib in Resources */,
 				A677F2232819BB37007D500D /* EditWakeUpRoutineStoryboard.storyboard in Resources */,
@@ -459,7 +459,6 @@
 				A677F1C42818D629007D500D /* DailyGoals.xcdatamodeld in Sources */,
 				A677F1BE2818D628007D500D /* MyDailyGoalsController.swift in Sources */,
 				A6E36783281B38A100413032 /* YesterdaySummaryOneTableViewCell.swift in Sources */,
-				A6E36777281B0D3F00413032 /* EmptyDataTableViewCell.swift in Sources */,
 				A677F1BA2818D628007D500D /* AppDelegate.swift in Sources */,
 				A677F1BC2818D628007D500D /* SceneDelegate.swift in Sources */,
 				A677F21A2819808C007D500D /* UIView+Extension.swift in Sources */,
@@ -468,6 +467,7 @@
 				A6DA3864281AB2D000AA5D53 /* Date.swift in Sources */,
 				A677F21F28198569007D500D /* GoalsPriority.swift in Sources */,
 				A6E36787281B3B5F00413032 /* YesterdaySummaryTwoTableViewCell.swift in Sources */,
+				A6C0D687281E04D1004E391D /* EmptyDataTableViewCell.swift in Sources */,
 				A677F21D28198321007D500D /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

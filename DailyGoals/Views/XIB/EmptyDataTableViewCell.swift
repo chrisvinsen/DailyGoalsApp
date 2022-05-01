@@ -2,15 +2,13 @@
 //  EmptyDataTableViewCell.swift
 //  DailyGoals
 //
-//  Created by Christianto Vinsen on 29/04/22.
+//  Created by Christianto Vinsen on 01/05/22.
 //
 
 import UIKit
 
 class EmptyDataTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var infoLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

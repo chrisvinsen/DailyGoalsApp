@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,49 +11,53 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyDataTableViewCell" rowHeight="70" id="KGk-i7-Jjw" customClass="EmptyDataTableViewCell" customModule="DailyGoals" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmptyDataTableViewCell" id="KGk-i7-Jjw" customClass="EmptyDataTableViewCell" customModule="DailyGoals" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aIG-he-Xks">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lge-8g-57g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmc-r7-vKH">
-                                <rect key="frame" x="10" y="25" width="310" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qKB-Yh-ns9">
+                                <rect key="frame" x="10" y="0.0" width="310" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemGrayColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <color key="tintColor" name="PrimaryColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Qmc-r7-vKH" secondAttribute="trailing" id="U9t-cf-fMf"/>
-                            <constraint firstItem="Qmc-r7-vKH" firstAttribute="leading" secondItem="aIG-he-Xks" secondAttribute="leading" constant="10" id="kxb-H6-rIh"/>
-                            <constraint firstItem="Qmc-r7-vKH" firstAttribute="centerY" secondItem="aIG-he-Xks" secondAttribute="centerY" id="sfI-SV-hpu"/>
+                            <constraint firstItem="qKB-Yh-ns9" firstAttribute="leading" secondItem="lge-8g-57g" secondAttribute="leading" constant="10" id="Q4Q-DO-0ZT"/>
+                            <constraint firstItem="qKB-Yh-ns9" firstAttribute="top" secondItem="lge-8g-57g" secondAttribute="top" id="SwT-ak-LA9"/>
+                            <constraint firstAttribute="trailing" secondItem="qKB-Yh-ns9" secondAttribute="trailing" id="eif-jc-EhJ"/>
+                            <constraint firstAttribute="height" constant="40" id="jqY-D2-Sha"/>
+                            <constraint firstAttribute="bottom" secondItem="qKB-Yh-ns9" secondAttribute="bottom" id="wEl-mD-wtr"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="aIG-he-Xks" secondAttribute="trailing" id="W1O-Dw-m6H"/>
-                    <constraint firstAttribute="bottom" secondItem="aIG-he-Xks" secondAttribute="bottom" id="Y3A-jj-abL"/>
-                    <constraint firstItem="aIG-he-Xks" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ngC-TH-jGK"/>
-                    <constraint firstItem="aIG-he-Xks" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wkK-7D-tbd"/>
+                    <constraint firstItem="lge-8g-57g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="06e-2U-pKQ"/>
+                    <constraint firstAttribute="bottom" secondItem="lge-8g-57g" secondAttribute="bottom" id="4BO-LE-P5X"/>
+                    <constraint firstItem="lge-8g-57g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BAY-TL-own"/>
+                    <constraint firstAttribute="trailing" secondItem="lge-8g-57g" secondAttribute="trailing" id="rne-RC-Dz7"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <connections>
-                <outlet property="infoLabel" destination="Qmc-r7-vKH" id="SgF-d6-csP"/>
-            </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="86.383928571428569"/>
+            <color key="tintColor" name="PrimaryColor"/>
+            <point key="canvasLocation" x="139" y="78"/>
         </tableViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="AccentColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryColor">
+            <color red="1" green="0.29899999499320984" blue="0.335999995470047" alpha="0.94999998807907104" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
